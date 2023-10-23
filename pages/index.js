@@ -1,5 +1,14 @@
+import { useEffect } from 'react';
+import { useRouter } from 'next/router';
+
 function Home() {
-  return <h1>Pagina Inicial</h1>
+  const router = useRouter();
+
+  useEffect(() => {
+    router.replace('/UnderConstruction');
+  }, []);
+
+  return null;
 }
 
 export default Home;
