@@ -4,7 +4,9 @@
   "description": "Repository for the TI Compass website",
   "main": "index.js",
   "scripts": {
-    "dev": "next dev"
+    "dev": "next dev",
+    "teste": "jest",
+    "test:watch": "jest —watch"
   },
   "author": "",
   "license": "MIT",
@@ -14,6 +16,7 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "jest": "^29.6.2",
     "prettier": "^3.0.3"
   }
 }
