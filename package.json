@@ -4,14 +4,15 @@
   "description": "Repository for the TI Compass website",
   "main": "index.js",
   "scripts": {
-    "dev": "npm rum services:up && next dev",
+    "dev": "npm rum services:up && npm run wait-for-db && npm run migration:up && next dev",
     "services:up": "docker compose -f infra/compose.yaml up -d",
     "services:stop": "docker compose -f infra/compose.yaml stop",
     "services:down": "docker compose -f infra/compose.yaml down",
     "test": "jest --runInBand",
     "test:watch": "jest --watchAll --runInBand",
     "migration:create": "node-pg-migrate -m infra/migrations create",
-    "migration:up": "node-pg-migrate -m infra/migrations --envPath .env.development up"
+    "migration:up": "node-pg-migrate -m infra/migrations --envPath .env.development up",
+    "wait-for-db": "node infra/scripts/wait-for-db.js"
   },
   "author": "",
   "license": "MIT",
