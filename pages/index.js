@@ -6,7 +6,7 @@ function Home() {
 
   useEffect(() => {
     router.replace("/UnderConstruction");
-  }, []);
+  }, [router]);
 
   return null;
 }
